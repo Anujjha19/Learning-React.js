@@ -1,0 +1,205 @@
+***LET 
+let is recommended when you need to change the value of the variable over time (also known as reassigning).
+let declarations are block scoped and are only visible in the block they are declared.
+It can not be re-declared but can be updated.
+
+***VAR 
+var is recommended when you want to declare a variable once and never change it's value.
+var declarations are globally scoped or function scoped while their declarations are visible throughout the program.
+It can be re-declared and updated.
+
+***CLASSES
+Classes are one of the most powerful features available in JavaScript, and they provide the foundation for object oriented programming. Here's an example of a simple class:
+Classes are one of the basic features of JavaScript. They enable developers to create groups of related objects in a way that is similar to other object-oriented programming languages. Classes allow you to create multiple instances of objects, to define methods and properties that all instances share, and to define constructors that create instances of the class.
+
+class Human{
+    constructor(){
+        this.gender = "Male";
+    }
+
+    printGender(){
+        console.log(this.gender);
+    }
+}
+
+const person = new Human();
+person.printGender(); // Output result: Male
+
+
+***SCOPE RESOLUTION
+In simpler terms, scope resolution is concerned with correctly referencing and accessing objects that have been declared in different parts of a program. This can be useful for organizing code, as well as for avoiding naming conflicts.
+
+The scope resolution operator (::) is used to specify which parts of the code will be visible outside a certain block. Specifically, it can be used to refer to types, constants, and functions. For example, if you are using a namespace, you may have to use the scope resolution operator to access members of that namespace.
+
+
+// Namespace declaration
+namespace myNamespace {
+    // code...
+}
+
+// Using the scope resolution operator
+myNamespace::functionName();
+
+
+***ARROW FUNCTION
+ It allows for shorter code for defining and calling functions.
+An arrow function typically looks like this: (parameters) => {function body}. This is equivalent to a regular function defined as function name(parameters) {function body}.
+
+Arrow functions have some particular benefits:
+Is less verbose than a traditional function declaration
+Automatically binds the value of this to the surrounding context
+
+const squared = (num) => {
+   return num * num;
+}
+const numbers = [1, 2, 3];
+const doubledAndSquared = numbers.map(val => squared(val * 2));
+
+*** SUPER Name / function
+
+The super keyword is used when calling a method on an object parent. For example
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} says hi!`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // calling parent's constructor with `super`
+    this.breed = breed;
+  }
+
+  bark() {
+    console.log(`${this.name} barks!`);
+  }
+}
+
+const dog = new Dog('Fido', 'Husky');
+dog.speak(); // Fido says hi!
+dog.bark(); // Fido barks!
+
+
+*** PROPERTIES and methods
+In JavaScript, an object's properties (e.g. name, age) hold data and an object's methods (e.g. getName, setAge) carry out tasks. An object's properties and methods must be accessed using the dot notation, like so:
+
+// Get an object's property (gets the value of 'name')
+object.name
+
+// Set an object's property (sets the value of 'name' to 'John')
+object.name = 'John'
+
+// Call an object's method (calls the getName() method)
+object.getName()
+
+*** REST Opertor
+WHen we pass the element to function
+
+The Rest operator (...) can be used to collect the remaining values of an array into a single variable. It is often used when dealing with function parameters. For example:
+// Example using the rest operator
+function sayMyName(name, ...others) {
+  console.log(name); // Outputs 'John'
+  console.log(others); // Outputs ['Smith', 'Doe', 'Whatever']
+}
+
+sayMyName('John', 'Smith', 'Doe', 'Whatever');
+
+function addNumbers(...numbers) {
+    let result = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        result += numbers[i];		
+    }
+    return result;
+}
+
+const sum = addNumbers(1, 2, 3, 4);
+console.log(sum); // Outputs 10
+
+
+***SPREAD Opertor
+- Destructuring an Array 
+
+const animals = ['dog', 'cat', 'goat'];
+console.log(...animals); // Outputs 'dog cat goat'
+
+the Spread operator (...) can be used to break down a single array or value into multiple arguments for a function or expression. Similarly to the Rest operator, it is also often used when dealing with function parameters. Here is an example:
+
+// Example using the spread operator
+let arr = [1, 2, 3];
+let newArr= [ ... arr , 4];
+console.log( newArr) ;[ 1 ,2 ,3 ,4]
+console.log(Math.max(...arr));  // Outputs 3
+
+*** Destructuring Array Objects
+Destructuring an array object is a way to store multiple values from an array into separate variables. It is done by ‘unpacking’ the values from an array and assigning them to individual variables.
+
+Syntax:
+const [var1, var2, ..., varN] = array;
+
+Code Example:
+In this example we have an array with 3 elements containing strings. We will use destructuring to assign each element of the array to a different variable.
+
+const cars = ['Mazda', 'Toyota', 'Honda'];
+const [car1, car2, car3] = cars;
+
+console.log(car1); // Mazda
+console.log(car2); // Toyota
+console.log(car3); // Honda
+
+--- const arr =[] ,  Its a Dynamic size of a Array
+
+*** 
+Bug - a bug is a mistake in the code that causes an unexpected behavior or incorrect output.  --- WhilE Checking for Test Case
+
+Error - an error indicates the compiler doesn't understand the code written, so it won't compile it. --- PROGRAMMERS
+
+Fault - a fault is an intermittent bug that appears sporadically and affects part of the system unpredictably.  --- HARDWARE
+
+***
+<script async src="myScript.js"></script>
+The async attribute tells the browser to download and execute the script immediately, while the rest of the document continues to load, without pausing.
+
+<script defer src="myScript.js></script>
+The defer attribute tells the browser to wait until the entire document is loaded before executing the script. The script is then executed in the order it was found on the page, from top to bottom.
+
+
+*** COMMAND LINE ARGUMENT
+
+Command line arguments are used to provide additional information to a program when it is executed from the command line. In C++, the main() function of the program accepts two parameters: argc, which is an integer representing the number of command line arguments provided, and argv, which is an array of strings containing each argument passed in.
+
+int main(int argc, char *argv[]) {
+    // Loop through all arguments and print them
+    for (int i = 0; i < argc; i++) {
+        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+    }
+    return 0;
+}
+Executing this program on the command line with the following arguments: Hello world from the command line!
+would produce the following output:
+
+Argument 0: ./programName
+Argument 1: Hello
+Argument 2: world
+Argument 3: from
+Argument 4: the
+Argument 5: command
+Argument 6: line!
+
+
+***
+3 Dialog Boxes 
+Alert
+Prompt
+Confirm
+
+
+***
+Zero ARGUMENT 
+DefULT - by compiler
+
+*** POST vs GET 
+The main difference between post and get in HTML <button> elements is that post can be used to submit a form with data to a server, while get only retrieves information for the web page from the server. When using post, the data is sent to the server, while using get, the information is requested from the server.
+

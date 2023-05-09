@@ -1,0 +1,58 @@
+
+Genie
+
+Sure, here's an example of how to use the useContext hook in React:
+
+
+import React, { useContext } from 'react';
+
+const ThemeContext = React.createContext('light');
+
+function Header() {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <header className={`header-${theme}`}>
+      <h1>My App</h1>
+    </header>
+  );
+}
+
+function Sidebar() {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <aside className={`sidebar-${theme}`}>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </aside>
+  );
+}
+
+function Content() {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <div className={`content-${theme}`}>
+      <p>This is the content of my app.</p>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Header />
+      <Sidebar />
+      <Content />
+    </ThemeContext.Provider>
+  );
+}
+
+export default App;
+in this example, we define a ThemeContext using the createContext method. We then define three components: Header, Sidebar, and Content. Each of these components uses the useContext hook to get the current theme from the ThemeContext.
+
+Finally, we render the three components inside the App component, wrapped in a ThemeContext.Provider component that sets the current theme to "dark". This means that all three components will use the "dark" theme.

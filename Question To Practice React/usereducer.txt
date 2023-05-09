@@ -1,0 +1,47 @@
+Sure, here's an example of how to use the useReducer hook in React:
+
+
+import React, { useReducer } from 'react';
+
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <Counter />
+    </div>
+  );
+}
+
+export default App;
+In this example, we define an initial state object with a count property set to 0. We also define a reducer function that takes a state and an action, and returns a new state based on the action.
+
+We then define a Counter component that uses the useReducer hook to manage its state. The useReducer hook takes the reducer function and the initialState as arguments, and returns an array with the current state and a dispatch function that can be used to update the state.
+
+The Counter component renders the current count value from the state, and two buttons that call the dispatch function with different actions when clicked.
+
+Finally, we render the Counter component inside the App component. When the buttons are clicked, the reducer function is called with the current state and the corresponding action, and returns a new state that is then used to update the UI.

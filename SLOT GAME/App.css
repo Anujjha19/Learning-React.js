@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(133, 143, 143);
+    
+}
+.heading_style{
+    padding: 30px 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: rgb(90, 213, 218);
+    background-color: rgb(5, 15, 59);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .slot_inner{
+    text-align: center;
+  }
+  
+  .slotmachine {
+    width: 400px;
+    height: 300px;
+    border: 4px solid rgb(28, 24, 24);
+    margin: 0 auto;
+  }

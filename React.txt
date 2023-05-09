@@ -1,0 +1,229 @@
+**  NOTES  ** 
+
+-npm install -g create-react-app
+create-react-app --v
+mkdir foldername
+cd new folder
+create-react-app reactfirset name
+
+
+constructor Below Class
+if any Function after constructor
+
+Outside EventHandler React Does Not Perform Batching
+
+
+
+
+--------------------------------------------------
+
+*** For Styling 
+
+// Way 1 -  Create Object 
+const styles = {
+    image: {
+        width: 130,
+        height: 130,
+        background: "#ccc",
+        borderRadius: 5,
+    }
+}  using This -  style={styles.image}
+
+// Way 2 - Inline Styling 
+style={{ fontSize: 25 }}
+
+------------------------------------------------------
+*** To Bind The Function - 
+
+onClick={this.increaseQunatity.bind(this)}  -- WAY 1
+
+this.increaseQunatity =this.increaseQunatity.bind(this);  -- WAY 2 Write in Constructor
+
+//3rd WAY it automatcally bind 
+    increaseQunatity = () => {
+    this.state.Qty +=1;
+}) 
+
+---------------------------------------------------
+*** 
+Update the Value using Set State  write this in Function 
+
+//Set State Form 1 way - by Object
+        this.setState({
+       title : " New Title "
+}) 
+
+//Set State Form 2 way - by prev state  using function
+    decreaseQuantity = () => {
+
+const { Qty} = this.state;
+	if(Qty ===0){
+			return;
+		} 
+
+        this.setState((prevState) => {
+        return {
+            Qty: prevState.Qty - 1
+        }
+     })
+}
+
+----------------------------------------------------
+*** 
+Destructuring Object
+//This Should be written in after render before return 
+
+const { price, title, Qty } = this.state;
+// then we just have to use 
+{price}
+
+OR 
+//Use This 
+{this.state.price}, so on...
+
+----------------------------------------------------
+***
+CallBack Function , As we know React is asynchronous so we use call back function to render with click on time
+
+this.setState((prevState) => {
+            return {
+                Qty: prevState.Qty + 1
+            }
+        } , () => {
+//Action u need to perform
+})  
+}
+
+--------------------------------------------------
+
+*** Component Lifecycle 
+
+* ComponentDidMount() {
+ 	//Code Here 
+}
+[ 
+
+This lifecycle call just after component render method and its written above render  . + This is called for the first time only whenever the component created First time.
+
+Even if use setState and re render the component this would not get call.
+
+This is function  basically use to make APIs calls to attach Event Listener , or to listen some data or add some time .
+
+]
+
+* ComponentUnMount() {
+ //Code Here 
+}
+[
+ Just after your component will get updated it will show 
+it will get call everytime the components get updated and again comonents  will re render 
+]
+  
+* ComponentWIllUnmount () {
+//Code Here }
+ 
+[
+Just before coomponent is removed or  it will unMount 
+ To perform Clean Up ( like = cancel APIs calls , event listener , stoping times , etc ) 
+]
+
+------------------------------------------------------
+ 
+*** 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------
+**** MCQ
+
+1. When We call setState() inside render() method ? 
+- Stack Overflow Error
+
+2. Initial No : 1
+
+userCall - handleClick =() => {
+this.setState({ No : 2} ,() => 
+console.log(this.state.number});
+
+this.setState({ No : 3} ,() => 
+console.log(this.state.number});
+}
+
+Output- 3 , As in React , react will merge all set state in once and take the last set state as update
+ 
+
+3. Initial No : 1
+
+handleClick = () => {
+    this.setState(
+        prevState => {
+            return {
+                No.prevState.no + 2
+            };
+        }
+    );
+    this.setState(
+        prevState => {
+            return {
+                No.prevState.no + 2
+            };
+        }
+    );
+}
+
+Answer -  No : 6
+
+4.Initial No : 1
+
+handleClick = () => {
+    this.setState(
+        prevState => {
+            return {
+                No.prevState.no + 2
+            };
+	() => {
+		console.log(this.state.No);
+		}
+        }
+    );
+    this.setState(
+        prevState => {
+            return {
+                No.prevState.no + 2
+            };
+        }
+	() => {
+		console.log(this.state.No);
+		}
+
+    );
+}
+
+//Output  - 6 6
+
+5. In React Component , To override tto stopa component from Updating - [ we use shouldComponentUpdate ]
+
+
+
+
+
+_-------------------------------------------------------------------------
+

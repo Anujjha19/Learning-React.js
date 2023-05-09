@@ -1,0 +1,30 @@
+.stopwatch {
+    text-align: center;
+}
+
+.timer {
+    margin: 2rem 0;
+}
+
+.buttons button {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #00ffb3;
+    color: rgb(21, 20, 20);
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #0069d9;
+}
+
+.laps {
+    margin-top: 2rem;
+}
+
+.lap {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}

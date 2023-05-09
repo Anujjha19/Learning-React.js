@@ -1,0 +1,42 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: auto;
+    background-color: #53d2eb96;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    background: transparent;
+    color: #f8ab1c;
+}
+
+.btn {
+    padding: 1rem;
+    border: 2px solid black;
+    background-color: #ffa500;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.btn:hover {
+    color: orange;
+    background-color: black;
+}
+

@@ -1,0 +1,31 @@
+Sure, here's an example of how to use the useRef hook in React:
+
+import React, { useRef } from 'react';
+
+function TextInput() {
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleClick}>Focus</button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <TextInput />
+    </div>
+  );
+}
+
+export default App;
+In this example, we define a TextInput component that uses the useRef hook to get a reference to an input element. We then define a handleClick function that calls the focus method on the input element when a button is clicked.
+
+Finally, we render the TextInput component inside the App component. When the Focus button is clicked, the input element will be focused.
